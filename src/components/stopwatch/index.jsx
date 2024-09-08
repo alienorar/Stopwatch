@@ -16,7 +16,8 @@ export default class StopWatch extends Component {
         timerDisabled: false,
         stopwatchInterval: "",
         timerInterval: "",
-        intervals: []
+        intervals: [],
+        timerStarted: false
     };
 
     // Stopwatch functions
@@ -87,6 +88,7 @@ export default class StopWatch extends Component {
             timerHour: this.state.timerSetHour,
             timerMinute: this.state.timerSetMinute,
             timerSecond: this.state.timerSetSecond,
+            timerStarted: false // Reset timerStarted flag
         });
     };
 
@@ -98,7 +100,9 @@ export default class StopWatch extends Component {
                     if (timerHour === 0) {
                         clearInterval(this.state.timerInterval);
                         this.setState({ timerDisabled: false });
-                        this.playAlert(); // Play alert when timer reaches zero
+                        if (this.state.timerStarted) {
+                            this.playAlert(); // Play alert when timer reaches zero
+                        }
                         return;
                     } else {
                         this.setState({
@@ -123,6 +127,7 @@ export default class StopWatch extends Component {
         this.setState({
             timerDisabled: true,
             timerInterval: b,
+            timerStarted: true // Set timerStarted flag to true
         });
     };
 
@@ -142,6 +147,7 @@ export default class StopWatch extends Component {
             timerSetHour: 0,
             timerSetMinute: 0,
             timerSetSecond: 0,
+            timerStarted: false // Reset timerStarted flag
         });
     };
 
