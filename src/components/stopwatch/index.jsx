@@ -98,6 +98,7 @@ export default class StopWatch extends Component {
                     if (timerHour === 0) {
                         clearInterval(this.state.timerInterval);
                         this.setState({ timerDisabled: false });
+                        this.playAlert(); // Play alert when timer reaches zero
                         return;
                     } else {
                         this.setState({
@@ -147,6 +148,12 @@ export default class StopWatch extends Component {
     handleChange = (event) => {
         const { name, value } = event.target;
         this.setState({ [name]: parseInt(value, 10) || 0 });
+    };
+
+    playAlert = () => {
+        const message = "Timer has ended!";
+        const speech = new SpeechSynthesisUtterance(message);
+        speechSynthesis.speak(speech);
     };
 
     render() {
