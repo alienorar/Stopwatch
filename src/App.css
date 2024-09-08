@@ -1,0 +1,154 @@
+.stopwatch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f4f9;
+  /* Light grey background */
+  font-family: 'Times New Roman', serif;
+  /* Classic serif font */
+}
+
+.stopwatch-card {
+  background-color: #ffffff;
+  border: 2px solid #dcdcdc;
+  /* Light border for a classic look */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Times New Roman', serif;
+  transform: scale(0.98);
+  transition: transform 0.3s ease-in-out;
+}
+
+.stopwatch-card:hover {
+  transform: scale(1);
+}
+
+.stopwatch-header {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #dcdcdc;
+  padding-bottom: 10px;
+}
+
+.stopwatch-header h2 {
+  font-size: 2.5rem;
+  color: #333333;
+  margin: 0;
+}
+
+.stopwatch-body h2 {
+  font-size: 2rem;
+  color: #333333;
+  margin: 0;
+  animation: timeChange 1s ease-in-out;
+}
+
+.intervals {
+  margin: 20px 0;
+}
+
+.interval {
+  font-size: 1rem;
+  color: #555555;
+  margin: 5px 0;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.interval:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+.interval:nth-child(odd) {
+  animation-delay: 0.4s;
+}
+
+.stopwatch-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  border: none;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-start {
+  background-color: #4a90e2;
+  /* Classic blue */
+}
+
+.btn-start:hover {
+  background-color: #357abd;
+}
+
+.btn-stop {
+  background-color: #e94e77;
+  /* Classic red */
+}
+
+.btn-stop:hover {
+  background-color: #d03f62;
+}
+
+.btn-clear {
+  background-color: #7b8d93;
+  /* Muted grey-green */
+}
+
+.btn-clear:hover {
+  background-color: #6a7b82;
+}
+
+.btn-save {
+  background-color: #f5a623;
+  /* Classic orange */
+}
+
+.btn-save:hover {
+  background-color: #e49300;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes timeChange {
+  from {
+    transform: scale(1.05);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
