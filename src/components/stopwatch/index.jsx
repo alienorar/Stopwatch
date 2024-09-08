@@ -222,6 +222,10 @@ export default class StopWatch extends Component {
                         <button className='btn btn-clear' onClick={this.clearTimer}>Clear</button>
                     </div>
                 </div>
+
+                <footer className="stopwatch-footer-creator">
+                    <p>Created by Raykhona Khayrullaeva</p>
+                </footer>
             </div>
         );
     }

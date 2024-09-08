@@ -53,10 +53,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1rem;
-  color: #555555;
-  margin: 5px 0;
-  opacity: 0;
   animation: fadeInUp 0.5s ease-in-out forwards;
 }
 
@@ -150,6 +146,18 @@
   padding: 5px;
   font-size: 1rem;
   text-align: center;
+}
+
+.stopwatch-footer-creator {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #333333;
+  text-align: center;
+}
+
+.stopwatch-footer-creator p {
+  margin: 0;
+  font-style: italic;
 }
 
 @keyframes fadeIn {
